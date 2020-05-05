@@ -80,6 +80,15 @@ class Gmailieer:
     parser_send.add_argument ('-d', '--dry-run', action='store_true',
         default = False, help = 'do not actually send message')
 
+    # ignored arguments for sendmail compatability
+    parser_send.add_argument('-t', type = str, help = 'Ignored: always implied, allowed for sendmail compatability.', dest = 'i0')
+
+    parser_send.add_argument('-f', type = str, help = 'Ignored: has no effect, allowed for sendmail compatability.', dest = 'i1')
+
+    parser_send.add_argument('-o', type = str, help = 'Ignored: has no effect, allowed for sendmail compatability.', dest = 'i2')
+
+    parser_send.add_argument('-i', action='store_true', default = None, help = 'Ignored: always implied, allowed for sendmail compatability.', dest = 'i3')
+
     parser_send.add_argument('message', nargs = '?', default = '-',
         help = 'MIME message to send (or stdin "-", default)')
 
